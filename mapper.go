@@ -6,7 +6,23 @@ import (
 )
 
 // Map map src to dest.
-// src can be struct or pointer to struct, dest MUST be pointer to struct
+// src can be struct or pointer to struct, dest MUST be pointer to struct.
+// src and dest fields must have same name and same type, but not necessarily have same fields count, examples:
+//  type Struct1 struct {
+// 	 Str string
+// 	 Num int
+// 	 Float float64
+//  }
+//  
+//  type Struct2 struct {
+// 	 Str string
+// 	 Num int
+//  }
+//  
+//  struct1 := Struct1{Str: "Hello world", Num: 1, Float: 2.5}
+//  struct2 := new(Struct2)
+//  err := mapper.Map(struct1, struct2)
+//  // check error...
 func Map(src, dest interface{}) error {
 	// convert src and dest to reflect.Value and reflect.Type
 	srcVal := reflect.ValueOf(src)
