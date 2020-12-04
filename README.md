@@ -1,6 +1,7 @@
 # Mapper
 
 [![PkgGoDev](https://pkg.go.dev/badge/gihub.com/tamboto2000/mapper)](https://pkg.go.dev/gihub.com/tamboto2000/mapper)
+
 Mapper map struct to another struct with same or similiar fields.
 
   
