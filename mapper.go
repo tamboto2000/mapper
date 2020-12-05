@@ -85,7 +85,7 @@ func Map(src, dest interface{}) error {
 		if destF.Type().String() != srcF.Type().String() {
 			srcFType, _ := srcType.FieldByName(destFName)
 			srcFName := srcFType.Name
-			return errUnmatchType(srcType.Name()+"."+srcFName, destType.Name()+"."+destFName)
+			return errUnmatchType(srcType.String()+"."+srcFName, destType.String()+"."+destFName)
 		}
 
 		// set destF value
