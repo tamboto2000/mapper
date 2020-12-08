@@ -109,7 +109,7 @@ func matchAndAssign(srcVal, destVal reflect.Value, opt FieldOption) error {
 		// find field in src that has the same name as dest from i index
 		srcF := srcVal.FieldByName(destFName)
 		// if not found, continue iterate
-		if srcF.IsZero() {
+		if !srcF.IsValid() {
 			continue
 		}
 
